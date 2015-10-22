@@ -1,5 +1,6 @@
 package com.theironyard.contactsandroid;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         addButton.setOnClickListener(this);
         listView.setOnItemLongClickListener(this);
+        listView.setOnItemClickListener(this);
 
         contacts = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
         listView.setAdapter(contacts);
@@ -52,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+        Intent intent = new Intent(this, Main2Activity.class);
+        intent.putExtra("content", contacts.getItem(position));
+        startActivity(intent);
     }
 }

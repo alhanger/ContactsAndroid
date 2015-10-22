@@ -14,28 +14,37 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:id="@+id/linearLayout">
+        android:id="@+id/linearLayout"
+        android:weightSum="1"
+        android:gravity="bottom">
 
         <EditText
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
+            android:layout_width="108dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
             android:id="@+id/nameBar"
-            android:layout_weight="1"
             android:hint="Name" />
 
         <EditText
-            android:layout_width="1dp"
-            android:layout_height="fill_parent"
+            android:layout_width="101dp"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:ems="10"
             android:id="@+id/phoneBar"
-            android:layout_weight="1"
+            android:layout_weight="0.58"
             android:hint="Phone #" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="96dp"
+            android:layout_width="87dp"
             android:layout_height="wrap_content"
             android:text="Add"
-            android:id="@+id/addButton" />
+            android:id="@+id/addButton"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
     </LinearLayout>
 
     <ListView
@@ -47,4 +56,5 @@
         android:layout_marginBottom="55dp"
         android:layout_above="@+id/linearLayout"
         android:layout_alignBottom="@+id/linearLayout" />
+
 </RelativeLayout>
